@@ -29,11 +29,11 @@ public class Getpasswordback extends AppCompatActivity {
         bt_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //  Intent intent = new Intent(Getpasswordback.this, MainActivity.class);
-                //  startActivity(intent);
+                  Intent intent = new Intent(Getpasswordback.this, MainActivity2.class);
+                  startActivity(intent);
                 Toast.makeText(Getpasswordback.this, "你可真是个小天才", Toast.LENGTH_SHORT).show();
                 Toast.makeText(Getpasswordback.this, "可惜并没有这个功能", Toast.LENGTH_LONG).show();
-                finish();
+                //finish();
             }
         });
         bt_2.setOnClickListener(new View.OnClickListener() {

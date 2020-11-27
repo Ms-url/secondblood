@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.concurrent.Callable;
@@ -28,24 +29,25 @@ public class MainActivity extends AppCompatActivity {
     private static EditText et_username;
     private static EditText et_password;
     private String key;
-    private int i=0;
+    private int i = 0;
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-                if (resultCode == RESULT_OK) {
-                    String returnData1 = data.getStringExtra("data1");
-                    String returnData2 = data.getStringExtra("data2");
-                    Log.d("a", returnData1);
-                    et_username.setText(returnData1);
-                    et_password.setText(returnData2);
-                } else if (resultCode == RESULT_CANCELED) {
-                    String returnData1 = data.getStringExtra("data3");
-                    String returnData2 = data.getStringExtra("data4");
-                    Log.d("a", returnData1);
-                    et_username.setText(returnData1);
-                    et_password.setText(returnData2);
-                }
+        if (resultCode == RESULT_OK) {
+            String returnData1 = data.getStringExtra("data1");
+            String returnData2 = data.getStringExtra("data2");
+            Log.d("a", returnData1);
+            et_username.setText(returnData1);
+            et_password.setText(returnData2);
+        } else if (resultCode == RESULT_CANCELED) {
+            String returnData3 = data.getStringExtra("data3");
+            String returnData4 = data.getStringExtra("data4");
+            Log.d("a", returnData3);
+            et_username.setText(returnData3);
+            et_password.setText(returnData4);
+        }
     }
 
     @Override
@@ -61,14 +63,25 @@ public class MainActivity extends AppCompatActivity {
         CheckBox checkbox = (CheckBox) findViewById(R.id.checkBox);
         CheckBox checkboxpass = (CheckBox) findViewById(R.id.checkBox2);
 
-        checkboxpass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        TextView ti=findViewById(R.id.textView2);
+        ti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, pact.class);
+                startActivity(intent);
+                Toast.makeText(MainActivity.this,"用户协议",Toast.LENGTH_SHORT).show();
+            }
+        });
 
+
+        et_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        checkboxpass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
                     //如果选中，显示密码
                     et_password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                }else{
+                } else {
                     //否则隐藏密码
                     et_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 }
@@ -87,19 +100,19 @@ public class MainActivity extends AppCompatActivity {
                 switch (v.getId()) {
                     case R.id.button1:
                         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
-                            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                            startActivity(intent);
+                            //Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                            //startActivity(intent);
                             Toast.makeText(MainActivity.this, "账号和密码不能为空", Toast.LENGTH_LONG).show();
                         } else if (checkbox.isChecked()) {
-                               if (TextUtils.isEmpty(key)){
-                            Toast.makeText(MainActivity.this, "账号不存在", Toast.LENGTH_SHORT).show();
-                               }else if(key.equals(password)){
-                            Intent intent = new Intent(MainActivity.this, Firstpage.class);
-                            startActivity(intent);
-                            Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-                               }else {
-                            Toast.makeText(MainActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
-                               }
+                            if (TextUtils.isEmpty(key)) {
+                                Toast.makeText(MainActivity.this, "账号不存在", Toast.LENGTH_SHORT).show();
+                            } else if (key.equals(password)) {
+                                Intent intent = new Intent(MainActivity.this, Firstpage.class);
+                                startActivity(intent);
+                                Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(MainActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
+                            }
                         } else {
                             Toast.makeText(MainActivity.this, "请先同意用户协议", Toast.LENGTH_SHORT).show();
                         }
@@ -123,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Forget.class);
                 startActivityForResult(intent, 1);
+               // startActivity(intent);
             }
         });
 

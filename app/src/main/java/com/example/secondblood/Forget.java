@@ -30,23 +30,25 @@ private String user;
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent();
+                Intent intent=new Intent(Forget.this,MainActivity.class);
                 intent.putExtra("data1","Trump");
                 intent.putExtra("data2","20201122");
                 setResult(RESULT_OK,intent);
                 Toast.makeText(Forget.this,"好的懂王",Toast.LENGTH_LONG).show();
                 finish();
+                //startActivity(intent);
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.putExtra("data3","animal");
-                intent.putExtra("data4","62437849");
+                Intent intent=new Intent(Forget.this,MainActivity.class);
+                intent.putExtra("data1","animal");
+                intent.putExtra("data2","62437849");
                 setResult(RESULT_CANCELED,intent);
                 Toast.makeText(Forget.this,"不愧是你",Toast.LENGTH_LONG).show();
                 finish();
+                //startActivity(intent);
             }
         });
     }

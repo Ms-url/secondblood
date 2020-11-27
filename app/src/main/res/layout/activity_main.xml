@@ -25,7 +25,7 @@
         android:id="@+id/editText2"
         android:layout_width="318dp"
         android:layout_height="47dp"
-        android:hint="请输入您的密码 (最多16个字符）"
+        android:hint="请输入您的密码   (最多16个字符）"
         android:maxLines="1"
         android:maxLength="16"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -111,20 +111,15 @@
 
     <CheckBox
         android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="81dp"
-        android:layout_marginLeft="81dp"
+        android:layout_width="31dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginLeft="93dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginRight="39dp"
-        android:text="同意用户协议"
         app:layout_constraintBottom_toTopOf="@+id/button1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.409" />
 
     <CheckBox
         android:id="@+id/checkBox2"
@@ -134,8 +129,30 @@
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/checkBox"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/editText2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:layout_marginBottom="22dp"
+        android:text="同意用户协议"
+        android:textColor="#0A0D10"
+        android:textSize="15dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/button1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
