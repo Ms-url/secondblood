@@ -3,7 +3,9 @@ package com.example.secondblood;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -33,8 +35,16 @@ private String user;
                 Intent intent=new Intent(Forget.this,MainActivity.class);
                 intent.putExtra("data1","Trump");
                 intent.putExtra("data2","20201122");
+                if (isExistUserName("Trump")) {
+
+                }
+                else {
+                SharedPreferences.Editor save_data = getSharedPreferences("user_data", MODE_PRIVATE).edit();
+                save_data.putString("Trump","20201122");
+                save_data.apply();
+                }
                 setResult(RESULT_OK,intent);
-                Toast.makeText(Forget.this,"好的懂王",Toast.LENGTH_LONG).show();
+                Toast.makeText(Forget.this,"好的懂王",Toast.LENGTH_SHORT).show();
                 finish();
                 //startActivity(intent);
             }
@@ -43,10 +53,17 @@ private String user;
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(Forget.this,MainActivity.class);
-                intent.putExtra("data1","animal");
-                intent.putExtra("data2","62437849");
+                intent.putExtra("data3","animal");
+                intent.putExtra("data4","62437849");
+                if (isExistUserName("animal")) {
+
+                }
+                else {
+                SharedPreferences.Editor save_data = getSharedPreferences("user_data", MODE_PRIVATE).edit();
+                save_data.putString("animal","62437849");
+                save_data.apply();}
                 setResult(RESULT_CANCELED,intent);
-                Toast.makeText(Forget.this,"不愧是你",Toast.LENGTH_LONG).show();
+                Toast.makeText(Forget.this,"不愧是你",Toast.LENGTH_SHORT).show();
                 finish();
                 //startActivity(intent);
             }
@@ -57,5 +74,16 @@ private String user;
         intent.putExtra("data5"," ");
         setResult(RESULT_FIRST_USER,intent);
         finish();
+    }
+
+    private boolean isExistUserName(String name_key) {
+        boolean has_userName = false;
+        SharedPreferences sp = getSharedPreferences("user_data", MODE_PRIVATE);
+        String spPsw = sp.getString(name_key, "");//传入用户名获取密码
+        //如果密码不为空则确实保存过这个用户名
+        if (!TextUtils.isEmpty(spPsw)) {
+            has_userName = true;
+        }
+        return has_userName;
     }
 }

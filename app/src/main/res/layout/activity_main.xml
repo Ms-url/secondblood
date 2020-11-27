@@ -40,27 +40,31 @@
         android:id="@+id/button1"
         android:layout_width="331dp"
         android:layout_height="51dp"
+        android:layout_marginTop="13dp"
         android:layout_marginBottom="164dp"
         android:text="登录"
         app:backgroundTint="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="114dp"
         android:layout_height="37dp"
+        android:layout_marginTop="14dp"
         android:layout_marginBottom="228dp"
-        android:text="忘记密码？"
 
+        android:text="忘记密码？"
         android:textColor="#2196F3"
         app:backgroundTint="#0AFAB9CF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
 
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.134"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <Button
         android:id="@+id/button6"
@@ -111,28 +115,29 @@
 
     <CheckBox
         android:id="@+id/checkBox"
-        android:layout_width="31dp"
-        android:layout_height="38dp"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="93dp"
         android:layout_marginLeft="93dp"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
         app:layout_constraintBottom_toTopOf="@+id/button1"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintStart_toEndOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:layout_constraintVertical_bias="0.409" />
+        app:layout_constraintVertical_bias="0.439" />
 
     <CheckBox
         android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="274dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        android:layout_width="32dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="280dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/editText2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"

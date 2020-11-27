@@ -34,15 +34,15 @@ public class Firstpage extends AppCompatActivity {
                 if (position == 1) {
                     Intent intent = new Intent(Firstpage.this, game.class);
                     startActivity(intent);
-                    Toast.makeText(Firstpage.this, "你点了" + position + "号按钮", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Firstpage.this, "你点了" + position + "号按钮", Toast.LENGTH_SHORT).show();
                 } else if (position == 2) {
                     Intent intent = new Intent(Firstpage.this, gift.class);
                     startActivity(intent);
-                    Toast.makeText(Firstpage.this, "你点了" + position + "号按钮", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Firstpage.this, "你点了" + position + "号按钮", Toast.LENGTH_SHORT).show();
                 } else if (position == 0) {
                     Toast.makeText(Firstpage.this, "暂无此功能", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(Firstpage.this, "你点了" + position + "号按钮", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Firstpage.this, "你点了" + position + "号按钮", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -56,7 +56,7 @@ public class Firstpage extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Toast.makeText(Firstpage.this, "什么也没发生", Toast.LENGTH_LONG).show();
+        Toast.makeText(Firstpage.this, "什么也没发生", Toast.LENGTH_SHORT).show();
         return super.onOptionsItemSelected(item);
     }
 
