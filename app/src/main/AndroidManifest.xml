@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/p2"
         android:supportsRtl="true"
         android:theme="@style/Theme.Secondblood">
-        <activity android:name=".pact"></activity>
+        <activity android:name=".SecondPage"></activity>
+        <activity android:name=".pact" />
         <activity android:name=".gift" />
         <activity android:name=".game" />
         <activity android:name=".Firstpage" />

@@ -2,19 +2,18 @@ package com.example.secondblood;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.media.Image;
+//import android.annotation.SuppressLint;
+//import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
+//import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+//import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import java.io.IOException;
-
-import static com.example.secondblood.R.raw.mucis;
+//import java.io.IOException;
+//import static com.example.secondblood.R.raw.mucis;
 
 public class MainActivity2 extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
@@ -35,7 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
     }
 
-    private void play(String path) {
+ /*   private void play(String path) {
         //播放之前要先把音频文件重置
         try {
             mediaPlayer.reset();
@@ -55,6 +54,6 @@ public class MainActivity2 extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 }
