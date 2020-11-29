@@ -12,7 +12,7 @@
         android:layout_width="301dp"
         android:layout_height="63dp"
         android:hint="请输入账号"
-        android:Lines="1"
+        android:lines="1"
         android:inputType="text"
         android:maxLength="12"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText"
         app:layout_constraintVertical_bias="0.056"
-        android:Lines="1"
+        android:lines="1"
         android:inputType="text"
         />
 
@@ -50,7 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
         app:layout_constraintVertical_bias="0.07"
-        android:Lines="1"
+        android:lines="1"
         android:inputType="text"/>
 
     <Button
